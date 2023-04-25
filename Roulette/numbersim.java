@@ -15,7 +15,6 @@ public class numbersim {
         String in;
         String col;
         scan.close();
-        System.out.println(num);
         if (num == 0) {
             in = "Zero";
             col = "Green";
@@ -43,6 +42,18 @@ public class numbersim {
                 }
             }
         }
+        if (inpt == in){
+            System.out.println("You Win");
+        }
+        else{
+            if (inpt == col){
+                System.out.println("You Win");
+            }
+            else {
+                if (inpt == num)
+            }
+        }
+        System.out.println(num);
         System.out.println(in);
         System.out.println(col);
     }
