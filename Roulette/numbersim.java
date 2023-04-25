@@ -1,41 +1,50 @@
 package Roulette;
 
-import javax.swing.*;
+//import javax.swing.*;
+import java.util.Scanner;
 
 public class numbersim {
     public static void main(String[] args) {
-        JFrame gui = new JFrame();
+       /*   JFrame gui = new JFrame();
         gui.setSize(1000, 1000);
-        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); */
+        System.out.println("What do you want to bet on ? (Number) (Even) (Odd) (Red) (Black) (Green)");
+        Scanner scan = new Scanner(System.in);
+        String inpt = scan.next();
         int num = rand(0, 37);
+        String in;
+        String col;
+        scan.close();
         System.out.println(num);
         if (num == 0) {
-            System.out.println("Zero");
-            System.out.println("Green");
+            in = "Zero";
+            col = "Green";
         } else {
             if (num == 37) {
-                System.out.println("Zero");
-                System.out.println("Green");
+                in = "Zero";
+                col ="Green";
             } else {
                 if (num == 1 || num == 3 || num == 5 || num == 7 || num == 9 || num == 12 || num == 14 || num == 16
                         || num == 18 || num == 19 || num == 21 || num == 23 || num == 25 || num == 27 || num == 30
                         || num == 32 || num == 34 || num == 36) {
                     if (num % 2 == 0) {
-                        System.out.println("Even");
+                        in = "Even";
                     } else {
-                        System.out.println("Odd");
+                        in = "Odd";
                     }
-                    System.out.println("Red");
+                    col = "Red";
                 } else {
                     if (num % 2 == 0) {
-                        System.out.println("Even");
+                        in = "Even";
                     } else {
-                        System.out.println("Odd");
+                        in = "Odd";
                     }
-                    System.out.println("Black");
+                    col = "Black";
                 }
             }
         }
+        System.out.println(in);
+        System.out.println(col);
     }
 
     public static int rand(int min, int max) {
