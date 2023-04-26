@@ -11,10 +11,20 @@ public class numbersim {
         System.out.println("What do you want to bet on ? (Number) (Even) (Odd) (Red) (Black) (Green)");
         Scanner scan = new Scanner(System.in);
         String inpt = scan.next();
+        int inptint;
+
+        try{
+            inptint = Integer.parseInt(inpt);
+        }
+        catch(NumberFormatException e){
+            inptint = 0;
+        }
+        finally{
+            scan.close();
+        }
         int num = rand(0, 37);
         String in;
         String col;
-        scan.close();
         if (num == 0) {
             in = "Zero";
             col = "Green";
@@ -42,15 +52,20 @@ public class numbersim {
                 }
             }
         }
-        if (inpt == in){
+             if (inpt.equals(in)){
             System.out.println("You Win");
         }
         else{
-            if (inpt == col){
+            if (inpt.equals(col)){
                 System.out.println("You Win");
             }
             else {
-                if (inpt == num)
+                if (inptint == num){
+                    System.out.println("You win");
+                }
+                else {
+                    System.out.println("You lose");
+                }
             }
         }
         System.out.println(num);
