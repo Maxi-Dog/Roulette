@@ -68,7 +68,12 @@ public class numbersim {
                 }
             }
         }
-        System.out.println(num);
+        if (num != 37){
+            System.out.println(num);
+        }
+        else{
+            System.out.println("00");
+        }
         System.out.println(in);
         System.out.println(col);
     }
